@@ -7,6 +7,7 @@ class EncodeDecode:
         for s in strs:
             endcode.append(str(len(s))+'#'+s)
         return ''.join(endcode)
+        #return ''.join(f'{len(s)}#{s}' for s in strs) shorter way but the above way is self explanatory
     
     def decode (self, s: str) -> list[str]:
         decode =[]
