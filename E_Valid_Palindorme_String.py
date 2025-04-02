@@ -18,3 +18,6 @@ if pal == pal[::-1]:
     print('Palindrome')
 else:
     print('Not a palindrome')  # The whole above block can be replaced by return pal = pal[::-1]
+
+
+#The other way is to increment and decrement the pointer
