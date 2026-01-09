@@ -46,10 +46,11 @@ def brute_force(nums: list[int], target:int)-> list[int]:
 
 def Hash_Map(nums: list[int], target:int)-> list[int]:
     hash_map ={}
-
+    
     for i, v in enumerate(nums): # O(n)
-        if target - v in hash_map: # O(1)
-            return [i, hash_map[target-v]] # O(1) we return current index and index of difference from hash map
+        diff = target - v
+        if diff in hash_map: # O(1)
+            return [i, hash_map[diff]] # O(1) we return current index and index of difference from hash map
         else: # O(1)
             hash_map[v] = i # O(1) while storing value and index in hash map we store value as key and index as value
 # The time complexity is O(n)
