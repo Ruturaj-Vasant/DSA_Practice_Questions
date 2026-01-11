@@ -74,3 +74,16 @@ set_a = set(list_a) # converting list to set
 
 print(tuple_a)
 print(set_a)
+
+
+#-------------------------------------
+# Matrix
+matrix = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+] # 2D list
+for row in matrix: #printing row
+    for element in row: # printing element
+        print(element, end=" ")
+    print()
