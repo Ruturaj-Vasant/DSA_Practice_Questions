@@ -87,3 +87,61 @@ for row in matrix: #printing row
     for element in row: # printing element
         print(element, end=" ")
     print()
+
+
+#-------------------------------------
+# Dictionary
+for key, value in user.items(): # iterating through dictionary
+    print(f"{key}: {value}")
+print(user.keys()) # printing keys of dictionary
+print(user.values()) # printing values of dictionary
+print(user.get("name")) # accessing value by key
+user["age"] = 21 # updating value by key
+user["city"] = "New York" # adding new key-value pair
+print(user) # printing dictionary
+
+
+
+#-------------------------------------
+# Copy (Mutable vs Immutable)
+
+# IMMUTABLE example (int)
+r = 5
+l = r
+r = 10
+print("Immutable (int):")
+print("r =", r)   # 10
+print("l =", l)   # 5 (unchanged)
+
+# MUTABLE example (list reference / alias)
+b = [1, 2]
+a = b
+a.append(3)
+print("\nMutable (list) aliasing:")
+print("a =", a)   # [1, 2, 3]
+print("b =", b)   # [1, 2, 3] (changed because same list)
+
+# SHALLOW COPY (new outer list)
+b = [1, 2]
+a = b[:]          # or b.copy()
+a.append(3)
+print("\nShallow copy (1D list):")
+print("a =", a)   # [1, 2, 3]
+print("b =", b)   # [1, 2] (unchanged)
+
+# SHALLOW COPY problem with nested lists
+b = [[1, 2], [3, 4]]
+a = b[:]          # shallow copy
+a[0].append(99)
+print("\nShallow copy (nested list issue):")
+print("a =", a)   # [[1,2,99],[3,4]]
+print("b =", b)   # [[1,2,99],[3,4]] (inner list shared!)
+
+# DEEP COPY (copies nested objects too)
+import copy
+b = [[1, 2], [3, 4]]
+a = copy.deepcopy(b)
+a[0].append(99)
+print("\nDeep copy (nested list safe):")
+print("a =", a)   # [[1,2,99],[3,4]]
+print("b =", b)   # [[1,2],[3,4]] (unchanged)

@@ -36,6 +36,10 @@ def brute_force(nums: list[int], target:int)-> list[int]:
 # Java Vs Python Intrepreted language?
 
 
+#-----------------------------------------
+# Two Pointer Solution (only works for sorted array) the two pointer solution will not work here as we cannot sort the array as we will loose index info
+
+
 
 #------------------------------------------
 # Hash map Solution
